@@ -1,0 +1,11 @@
+Package: candlesticks
+Type: Package
+Title: Candlestick Pattern Recognition
+Version: 0.1-1
+Date: 2012-01-10
+Author: Andreas Voellenklee
+Maintainer: Andreas Voellenklee <wotuzu17@gmail.com>
+Depends: xts,quantmod,TTR 
+Description: Filter Japanese Candlestick Patterns like Doji, Engulfing, Harami, etc. out of OHLC price data. Still in heavy development.
+License: GPL-3
+LazyLoad: yes
