@@ -27,7 +27,7 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   \url{http://www.candlesticker.com/Bullish.asp}\cr
   \url{http://www.candlesticker.com/Bearish.asp}
 }
-\note{}
+\note{Trend detection prior to the formation is not implemented yet}
 \seealso{}
 \examples{
 \dontrun{

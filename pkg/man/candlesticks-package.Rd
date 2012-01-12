@@ -11,10 +11,9 @@ This package contains functions to detect the most popular japanese candlestick 
 \details{
 \tabular{ll}{
 Package: \tab candlesticks\cr
-Type: \tab Package\cr
-Version: \tab 0.1-1\cr
-Date: \tab 2012-01-10\cr
-Depends: \tab xts,quantmod,TTR\cr
+Version: \tab see description file\cr
+Date: \tab see description file\cr
+Depends: \tab R (>= 2.13), xts (>= 0.8-2), quantmod (>= 0.3-17), TTR (>= 0.21-0)\cr
 License: \tab GPL-3\cr
 LazyLoad: \tab yes\cr
 }

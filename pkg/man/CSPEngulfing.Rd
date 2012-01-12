@@ -5,13 +5,15 @@
 \description{Look for Bullish/Bearish Engulfing Pattern in a Open/Close price series}
 \usage{CSPEngulfing(TS)}
 \arguments{
-  \item{TS}{xts Time Series containing Open and Close Prices}
+  \item{TS}{xts Time Series containing Open and Close prices}
 }
 \details{
-  Number of candle lines: \bold{2}\cr\cr
+Number of candle lines: \bold{2}\cr\cr
 \emph{Bullish Engulfing Pattern:}\cr
+Prior trend: \bold{down}\cr
 Bullish Engulfing Pattern is a pattern characterized by a large white real body engulfing a preceding small black real body, which appears during a downtrend. The white body does not necessarily engulf the shadows of the black body but totally engulfs the body itself.\cr\cr
 \emph{Bearish Engulfing Pattern:}\cr
+Prior trend: \bold{up}\cr
 Bearish Engulfing Pattern is a large black real body, which engulfs a small white real body in an uptrend. The black body does not necessarily engulf the shadows of the white body but totally engulfs the body itself.
 }
 \value{
@@ -27,7 +29,7 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   \url{http://www.candlesticker.com/Bullish.asp}\cr
   \url{http://www.candlesticker.com/Bearish.asp}
 }
-\note{}
+\note{Trend detection prior to the formation is not implemented yet}
 \seealso{}
 \examples{
 \dontrun{
