@@ -14,8 +14,8 @@ CSPHarami <- function(TS, excludeDoji=FALSE, DojiBLRatio=.1) {
   # some don't accept the second candle being a doji
   if (excludeDoji==TRUE) {
     Doji <- CSPDoji(TS, DojiBLRatio)
-    BullHarami <- eval(BullHarami & !Doji)
-    BearHarami <- eval(BearHarami & !Doji)
+    BullHarami <- eval(BullHarami & !Doji[,1])
+    BearHarami <- eval(BearHarami & !Doji[,1])
   }
   result <- cbind(BullHarami, BearHarami)
   colnames(result) <- c("Bull.Harami", "Bear.Harami")

@@ -37,8 +37,8 @@ CSPNLongBlackCandleBodies(TSOC, N=2, n=20, threshold=1.5)
 \examples{
 \dontrun{
   getSymbols('YHOO',adjust=TRUE)
-  CSPNLongWhiteCandle(YHOO)
-  CSPNLongBlackCandle(YHOO, N=3)  
+  CSPNLongWhiteCandles(YHOO)
+  CSPNLongBlackCandles(YHOO, N=3)  
   CSPNLongWhiteCandleBodies(YHOO)
   CSPNLongBlackCandleBodies(YHOO, N=4, n=50, threshold=1.2)
 }
