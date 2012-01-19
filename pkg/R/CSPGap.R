@@ -9,7 +9,7 @@ CSPGap <- function (TS, ignoreShadows=FALSE) {
     UPGAP <- eval(as.xts(apply(LAGTSOC,1,max)) < as.xts(apply(TSOC,1,min)))
     DOWNGAP <- eval(as.xts(apply(LAGTSOC,1,min)) > as.xts(apply(TSOC,1,max)))    
   }
-  else {
+  else if (ignoreShadows==FALSE) {
     if (!is.OHLC(TS)) {
       stop("Price series must contain Open, High, Low and Close.")
     }

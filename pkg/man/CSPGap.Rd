@@ -1,6 +1,8 @@
 \name{CSPGap}
 \alias{CSPGap}
 \alias{Gap}
+\alias{RisingWindow}
+\alias{FallingWindow}
 \title{Gap Candlestick Pattern}
 \description{Look for price gaps between two candles in a OHLC price series}
 \usage{CSPGap(TS, ignoreShadows=FALSE)}
@@ -20,7 +22,7 @@
 }
 \author{Andreas Voellenklee}
 \references{}
-\note{}
+\note{The up/down gaps are also called \emph{Rising Window}/\emph{Falling Window}}
 \seealso{}
 \examples{
 \dontrun{
