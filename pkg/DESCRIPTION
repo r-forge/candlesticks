@@ -1,8 +1,8 @@
 Package: candlesticks
 Type: Package
 Title: Candlestick Pattern Recognition
-Version: 0.1-6
-Date: 2012-01-19
+Version: 0.1-7
+Date: 2012-01-20
 Author: Andreas Voellenklee
 Maintainer: Andreas Voellenklee <wotuzu17@gmail.com>
 Depends: R (>= 2.13), xts (>= 0.8-2), quantmod (>= 0.3-17), TTR (>= 0.21-0)

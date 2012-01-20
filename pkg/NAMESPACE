@@ -24,6 +24,7 @@ export(CSPStomache)
 export(CSPTasukiGap)
 export(CSPThreeBlackCrows)
 export(CSPThreeInside)
+export(CSPThreeMethods)
 export(CSPThreeOutside)
 export(CSPThreeWhiteSoldiers)
 # lag functions
