@@ -15,7 +15,7 @@
 \details{
   Number of candle lines: \bold{2}\cr\cr
   \emph{Bullish Kicking Pattern:}\cr
-  The Bullish Kicking Pattern is a White Marubozu following a Black Marubozu. After the Black Marubozu, market gaps higher on the opening and it opens with a gap above the prior session’s opening thus forming a White Marubozu. This pattern is filtered with the option \code{ignoreShadows=FALSE}, and occurs very scarcely.\cr
+  The Bullish Kicking Pattern is a White Marubozu following a Black Marubozu. After the Black Marubozu, market gaps higher on the opening and it opens with a gap above the prior session's opening thus forming a White Marubozu. This pattern is filtered with the option \code{ignoreShadows=FALSE}, and occurs very scarcely.\cr
   A less strict filter rule is when \code{ignoreShadows=TRUE}. In this case, the pattern is detected when a long black candle body follows a long white candle body, and the open of the first candle is lower than the open of the second candle.\cr\cr
   \emph{Bearish Kicking Pattern:}\cr
   Opposite of Bullish Kicking Pattern.

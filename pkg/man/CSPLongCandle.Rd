@@ -12,11 +12,10 @@
 \usage{
 CSPLongCandle(TS, n=20, threshold=1.5)
 CSPShortCandle(TS, n=20, threshold=1)
-CSPLongCandelBody(OCTS, n=20, threshold=1.5)
-CSPShortCandleBody(OCTS, n=20, threshold=1)}
+CSPLongCandleBody(TS, n=20, threshold=1.5)
+CSPShortCandleBody(TS, n=20, threshold=1)}
 \arguments{
   \item{TS}{xts Time Series containing OHLC prices}
-  \item{OCTS}{xts Time Series containing Open and Close prices}
   \item{n}{number of preceding candles to calculate median candle length}
   \item{threshold}{minimum/maximum candle length in relation to the median candle length of \code{n} preceding candles}
 }

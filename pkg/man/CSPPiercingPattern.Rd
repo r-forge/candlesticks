@@ -8,7 +8,7 @@
   \item{TS}{xts Time Series containing Open and Close Prices}
 }
 \details{
-A black candlestick is followed by a gap lower during the next day while the market is in downtrend. The day ends up as a white candlestick, which closes more than halfway into the prior black candlestick’s real body.
+A black candlestick is followed by a gap lower during the next day while the market is in downtrend. The day ends up as a white candlestick, which closes more than halfway into the prior black candlestick's real body.
 }
 \value{
   A xts object containing the column:

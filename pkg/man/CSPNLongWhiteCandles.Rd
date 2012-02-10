@@ -1,4 +1,5 @@
 \name{CSPNLongWhiteCandles}
+\alias{CSPNLongCandles}
 \alias{CSPNLongWhiteCandles}
 \alias{CSPNLongBlackCandles}
 \alias{CSPNLongWhiteCandleBodies}
@@ -8,12 +9,11 @@
 \usage{
 CSPNLongWhiteCandles(TS, N=2, n=20, threshold=1.5)
 CSPNLongBlackCandles(TS, N=2, n=20, threshold=1.5)
-CSPNLongWhiteCandleBodies(TSOC, N=2, n=20, threshold=1.5)
-CSPNLongBlackCandleBodies(TSOC, N=2, n=20, threshold=1.5)
+CSPNLongWhiteCandleBodies(TS, N=2, n=20, threshold=1.5)
+CSPNLongBlackCandleBodies(TS, N=2, n=20, threshold=1.5)
 }
 \arguments{
   \item{TS}{xts Time Series containing OHLC prices}
-  \item{TSOC}{xts Time Series containing Open and Close prices}
   \item{N}{number of candles to test}
   \item{n}{number of preceding candles to calculate median candle length}
   \item{threshold}{minimum/maximum candle length in relation to the median candle length of \code{n} preceding candles}

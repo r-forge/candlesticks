@@ -7,7 +7,7 @@
 \arguments{
   \item{TS}{xts Time Series containing Open, High, Low and Close Prices}
   \item{excludeDoji}{if TRUE the second candle must not be a doji}
-  \item{dojiBLRatio}{maximum body to lenght ratio to identify the second candle as doji, default = .1}
+  \item{DojiBLRatio}{maximum body to lenght ratio to identify the second candle as doji, default = .1}
 }
 \details{
   Number of candle lines: \bold{2}\cr\cr

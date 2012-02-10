@@ -33,7 +33,6 @@ export(LagOC)
 # special functions
 export(CandleBodyLength)
 export(CandleLength)
-export(CloseToSMA)
-export(is.HL)
-export(is.OC)
-export(PriceLocation)
+# export(is.HL)
+# export(is.OC)
+

@@ -16,9 +16,9 @@ CSPStar(TS, n=20, lthreshold=1.5, sthreshold=1)
 \details{
   Number of candle lines: \bold{3}\cr\cr
   \emph{Morning Star:}\cr
-   The market is in downtrend. The first candlestick is a long black body; the second one is a small real body of either color. It is characteristically marked with a gap in lower direction thus forming a star. Finally we see the black candlestick with a closing price well within first session’s black real body. This pattern clearly shows that the market now turned bullish.\cr\cr
+   The market is in downtrend. The first candlestick is a long black body; the second one is a small real body of either color. It is characteristically marked with a gap in lower direction thus forming a star. Finally we see the black candlestick with a closing price well within first session's black real body. This pattern clearly shows that the market now turned bullish.\cr\cr
   \emph{Evening Star:}\cr
-   The market is in uptrend. The first candlestick is a long white body; the second one is a small real body of either color. It is characteristically marked with a gap in higher direction thus forming a star. Finally we see the black candlestick with a closing price well within first session’s white real body. This pattern clearly shows that the market now turned bearish.
+   The market is in uptrend. The first candlestick is a long white body; the second one is a small real body of either color. It is characteristically marked with a gap in higher direction thus forming a star. Finally we see the black candlestick with a closing price well within first session's white real body. This pattern clearly shows that the market now turned bearish.
 }
 \value{
   A xts object containing the columns:

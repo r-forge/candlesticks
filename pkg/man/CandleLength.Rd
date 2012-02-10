@@ -4,11 +4,11 @@
 \title{Candle (Body) Length}
 \description{relative and absolute length of a price candle}
 \usage{
-  CandleLength(HLTS)
-  CandleBodyLength(OCTS)}
+  CandleLength(TS)
+  CandleBodyLength(TS)}
 \arguments{
-  \item{HLTS}{xts Time Series containing High and Low Prices}
-  \item{OCTS}{xts Time Series containing Open and Close Prices}
+  \item{TS}{xts Time Series containing High and Low Prices for CandleLength\cr
+            xts Time Series containing Open and Close Prices for CandleBodyLength}
 }
 \details{
   Both a relative candle length \code{(Hi-Lo)/(Hi+Lo)/2} and the absolute length \code{(Hi-Lo)} is calculated.
