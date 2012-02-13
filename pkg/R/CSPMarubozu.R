@@ -3,15 +3,16 @@ CSPMarubozu <- function(TS, n=20, threshold=1.5) {
     stop("Price series must contain Open, High, Low and Close.")
   }
   LCB <- CSPLongCandleBody(TS, n=n, threshold=threshold)
-  WhiteMarubozu <- eval( LCB[,"LongWhiteCandleBody"] & Op(TS)==Lo(TS) & Cl(TS)==Hi(TS) )
-  WhiteOpeningMarubozu <- eval( LCB[,"LongWhiteCandleBody"] & Op(TS)==Lo(TS) & Cl(TS)<Hi(TS) )
-  WhiteClosingMarubozu <- eval( LCB[,"LongWhiteCandleBody"] & Op(TS)>Lo(TS) & Cl(TS)==Hi(TS) ) 
-  BlackMarubozu <- eval( LCB[,"LongBlackCandleBody"] & Op(TS)==Hi(TS) & Cl(TS)==Lo(TS) )
-  BlackOpeningMarubozu <- eval( LCB[,"LongBlackCandleBody"] & Op(TS)==Hi(TS) & Cl(TS)>Lo(TS) ) 
-  BlackClosingMarubozu <- eval( LCB[,"LongBlackCandleBody"] & Op(TS)<Hi(TS) & Cl(TS)==Lo(TS) )
+  WhiteMarubozu <- reclass(eval( LCB[,"LongWhiteCandleBody"] & Op(TS)==Lo(TS) & Cl(TS)==Hi(TS) ), TS)
+  WhiteOpeningMarubozu <- reclass(eval( LCB[,"LongWhiteCandleBody"] & Op(TS)==Lo(TS) & Cl(TS)<Hi(TS) ), TS)
+  WhiteClosingMarubozu <- reclass(eval( LCB[,"LongWhiteCandleBody"] & Op(TS)>Lo(TS) & Cl(TS)==Hi(TS) ), TS)
+  BlackMarubozu <- reclass(eval( LCB[,"LongBlackCandleBody"] & Op(TS)==Hi(TS) & Cl(TS)==Lo(TS) ), TS)
+  BlackOpeningMarubozu <- reclass(eval( LCB[,"LongBlackCandleBody"] & Op(TS)==Hi(TS) & Cl(TS)>Lo(TS) ), TS)
+  BlackClosingMarubozu <- reclass(eval( LCB[,"LongBlackCandleBody"] & Op(TS)<Hi(TS) & Cl(TS)==Lo(TS) ), TS)
   result <- cbind(WhiteMarubozu, WhiteOpeningMarubozu, WhiteClosingMarubozu, 
                   BlackMarubozu, BlackOpeningMarubozu, BlackClosingMarubozu)
   colnames(result) <- c("WhiteMarubozu", "WhiteOpeningMarubozu", "WhiteClosingMarubozu", 
                         "BlackMarubozu", "BlackOpeningMarubozu", "BlackClosingMarubozu")
+  xtsAttributes(result) <- list(bars=1)
   return(result)
 }

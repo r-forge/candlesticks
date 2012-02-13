@@ -6,13 +6,14 @@ CSPNHigherClose <- function (TS, N) {
     stop("N has to be a integer >= 1")
   }
   LAGTS <- LagOC(TS,k=0:N)
-  result <- eval (Cl(LAGTS)[,1] > Cl(LAGTS)[,2])
+  result <- reclass(eval (Cl(LAGTS)[,1] > Cl(LAGTS)[,2]), TS)
   i <- 2
   while (i < N+1) {
-    result <- eval (result & (Cl(LAGTS)[,i] > Cl(LAGTS)[,(i+1)]))
+    result <- reclass(eval (result & (Cl(LAGTS)[,i] > Cl(LAGTS)[,(i+1)])), TS)
     i <- i+1
   }
   colnames(result) <- paste(N, "HigherClose", sep="")
+  xtsAttributes(result) <- list(bars=N)
   return (result)
 }
 
@@ -24,12 +25,13 @@ CSPNLowerClose <- function (TS, N) {
     stop("N has to be a integer >= 1")
   }
   LAGTS <- LagOC(TS,k=0:N)
-  result <- eval (Cl(LAGTS)[,1] < Cl(LAGTS)[,2])
+  result <- reclass(eval (Cl(LAGTS)[,1] < Cl(LAGTS)[,2]), TS)
   i <- 2
   while (i < N+1) {
-    result <- eval (result & (Cl(LAGTS)[,i] < Cl(LAGTS)[,(i+1)]))
+    result <- reclass(eval (result & (Cl(LAGTS)[,i] < Cl(LAGTS)[,(i+1)])), TS)
     i <- i+1
   }
   colnames(result) <- paste(N, "LowerClose", sep="")
+  xtsAttributes(result) <- list(bars=N)
   return (result)
 }

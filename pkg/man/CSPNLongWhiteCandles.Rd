@@ -20,7 +20,7 @@ CSPNLongBlackCandleBodies(TS, N=2, n=20, threshold=1.5)
 }
 \details{}
 \value{
-  A xts object containing the column:
+  A xts object containing the columns:
   \item{<N>LongWhiteCandles}{TRUE if current candle is the \code{N}-th consecutive long white candle}
   \item{<N>LongBlackCandles}{TRUE if current candle is the \code{N}-th consecutive long black candle}
   \item{<N>LongWhiteCandleBodies}{TRUE if current candle is the \code{N}-th consecutive long white candle body}

@@ -11,23 +11,28 @@ CSPThreeMethods <- function (TS, n=20, threshold=1.5) {
   MINCL <- lag(runMin(Cl(TS), n=3), k=1) # min close for middle 3 candles
   LC4 <- CSPLongCandleBody(LAG4TS, n=n, threshold=threshold)
   LC0 <- CSPLongCandleBody(TS, n=n, threshold=threshold)
-  RTM <- eval (LC4[,1] &          # 1st candle: long white candle body
+  RTM <- reclass(
+    eval (LC4[,1] &               # 1st candle: long white candle body
     Op(LAG3TS) > Cl(LAG3TS) &     # 2nd candle: black candle
     Op(LAG1TS) > Cl(LAG1TS) &     # 4th candle: black candle
     MAXOP < Hi(LAG4TS) & MAXOP > Lo(LAG4TS) & # candle bodies 2,3,4 within range of 1st candle
     MAXCL < Hi(LAG4TS) & MAXCL > Lo(LAG4TS) &
     MINOP < Hi(LAG4TS) & MINOP > Lo(LAG4TS) &
     MINCL < Hi(LAG4TS) & MINCL > Lo(LAG4TS) &
-    LC0[,1] & Cl(TS) > Cl(LAG4TS)) # 5th candle: long white candle body that closes higher than 1st candle
-  FTM <- eval (LC4[,2] &           # 1st candle: long black candle body
+    LC0[,1] & Cl(TS) > Cl(LAG4TS)),# 5th candle: long white candle body that closes higher than 1st candle
+    TS)
+  FTM <- reclass(
+    eval (LC4[,2] &                # 1st candle: long black candle body
     Op(LAG3TS) < Cl(LAG3TS) &      # 2nd candle: white candle
     Op(LAG1TS) < Cl(LAG1TS) &      # 4th candle: white candle
     MAXOP < Hi(LAG4TS) & MAXOP > Lo(LAG4TS) & # candle bodies 2,3,4 within range of 1st candle
     MAXCL < Hi(LAG4TS) & MAXCL > Lo(LAG4TS) &
     MINOP < Hi(LAG4TS) & MINOP > Lo(LAG4TS) &
     MINCL < Hi(LAG4TS) & MINCL > Lo(LAG4TS) &
-    LC0[,2] & Cl(TS) < Cl(LAG4TS)) # 5th candle: long black candle  body that closes lower than 1st candle
+    LC0[,2] & Cl(TS) < Cl(LAG4TS)),# 5th candle: long black candle  body that closes lower than 1st candle
+    TS)
   result <- cbind (RTM, FTM)
   colnames (result) <- c("RisingThreeMethods", "FallingThreeMethods")
+  xtsAttributes(result) <- list(bars=5)
   return (result)
 }
