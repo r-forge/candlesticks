@@ -4,7 +4,7 @@
 \description{
 This function returns not only the occurences of candlestick patterns, but also the OHLC price information of the pattern's formation. The OHLC price information is only set on dates when the pattern is detected, and 0 otherwise.
 }
-\usage{addPriceInformation(TS, CSP)}
+\usage{addPriceInfo(TS, CSP)}
 \arguments{
   \item{TS}{xts Time Series containing OHLC prices}
   \item{CSP}{xts Time Series of detected candlestick patterns, based on TS}
