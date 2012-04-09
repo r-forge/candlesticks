@@ -5,7 +5,7 @@
 \description{Look for Dark Cloud Covers in a Open/Close price series}
 \usage{CSPDarkCloudCover(TS)}
 \arguments{
-  \item{TS}{xts Time Series containing Open and Close Prices}
+  \item{TS}{xts Time Series containing Open and Close prices}
 }
 \details{
 A white candlestick is followed by a gap higher during the next day while the market is in uptrend. The day ends up as a black candlestick, which closes more than halfway into the prior black candlestick's real body.
