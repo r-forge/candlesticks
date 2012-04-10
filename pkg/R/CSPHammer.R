@@ -7,7 +7,7 @@ CSPHammer <- function(TS, minlowershadowCL=2/3, maxuppershadowCL=.1, minbodyCL=.
   BodyLo <- as.xts(apply(cbind(Op(TS),Cl(TS)),1,min))
   Hammer <- reclass( eval (
     BodyLo-Lo(TS) > CL*minlowershadowCL &   # lower shadow greater than lowershadeCL*CandleLength
-    Hi(TS)- BodyHi < CL*maxuppershadowCL &  # upper shadow missing or very short
+    Hi(TS)- BodyHi <= CL*maxuppershadowCL & # upper shadow missing or very short
     abs (Cl(TS)-Op(TS)) > CL*minbodyCL)     # Body length greater than minbodyCL*CandleLength
     ,TS)
   colnames(Hammer) <- c("Hammer")

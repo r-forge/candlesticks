@@ -3,35 +3,25 @@
 \alias{Marubozu}
 \title{Marubozu Candlestick Pattern}
 \description{Look for Marubozu Candlestick Patterns in a OHLC price series}
-\usage{CSPMarubozu(TS, n=20, threshold=1.5)}
+\usage{CSPMarubozu(TS, n=20, ATRFactor=1, maxuppershadowCL=.1, maxlowershadowCL=.1)}
 \arguments{
   \item{TS}{xts Time Series containing OHLC prices}
-  \item{n}{number of preceding candles to calculate median candle length}
-  \item{threshold}{minimum candle length in relation to the median candle length of \code{n} preceding candles}
+  \item{n}{number of preceding candles to calculate Average True Range}
+  \item{ATRFactor}{minimum size of candle body compared to the ATR}
+  \item{maxuppershadowCL}{maximum tolerated upper shadow to candle length ratio}
+  \item{maxlowershadowCL}{maximum tolerated lower shadow to candle length ratio}
 }
 \details{
 Number of candle lines: \bold{1}\cr\cr
 \emph{White Marubozu:}\cr
-A long white candle that has no shadows on either end. Op=Lo, Cl=Hi.\cr\cr
-\emph{White Opening Marubozu:}\cr
-A long white candle body with an upper shadow but no lower shadow. Op=Lo.\cr\cr
-\emph{White Closing Marubozu:}\cr
-A long white candle body with a lower shadow but no upper shadow. Cl=Hi.\cr\cr
+A long white candle that has no shadows or only small shadows on either end.\cr\cr
 \emph{Black Marubozu:}\cr
-A long black candle that has no shadows on either end. Op=Hi, Cl=Lo.\cr\cr
-\emph{Black Opening Marubozu:}\cr
-A long black candle body with a lower shadow but no upper shadow. Op=Hi.\cr\cr
-\emph{Black Closing Marubozu:}\cr
-A long black candle body with a upper shadow but no lower shadow. Cl=Lo.\cr\cr
+A long black candle that has no shadows or only small shadows on either end.\cr\cr
 }
 \value{
   A xts object containing the columns:
   \item{WhiteMarubozu}{TRUE if pattern detected}
-  \item{WhiteOpeningMarubozu}{TRUE if pattern detected}
-  \item{WhiteClosingMarubozu}{TRUE if pattern detected}
   \item{BlackMarubozu}{TRUE if pattern detected}
-  \item{BlackOpeningMarubozu}{TRUE if pattern detected}
-  \item{BlackClosingMarubozu}{TRUE if pattern detected}
 }
 \author{Andreas Voellenklee}
 \references{
@@ -39,13 +29,24 @@ The following site(s) were used to code/document this indicator:\cr
   \url{http://www.candlesticker.com/Bullish.asp}\cr
   \url{http://www.candlesticker.com/Bearish.asp}
 }
-\note{}
-\seealso{\code{\link{CSPLongCandle}}}
+\note{
+In default settings, the candle \emph{body} length must be greater than the average true range of last \code{n} periods. The threshold can be varied by \code{ATRFactor}.
+}
+\seealso{
+\code{\link{CandleBodyLength}}
+\code{\link{ATR}}
+}
 \examples{
 \dontrun{
   getSymbols('YHOO',adjust=TRUE)
+
   CSPMarubozu(YHOO)
-  CSPMarubozu(YHOO, threshold=2) # filter for very long marubozus
+  
+  # include not-so-long-marubozus
+  CSPMarubozu(YHOO, ATRFactor=.8)
+  
+  # filter for white closing marubozus (Cl(TS)=Hi(TS))
+  CSPMarubozu(YHOO, maxuppershadowCL=0)[,"WhiteMarubozu"]
 }
 }
 \keyword{}
