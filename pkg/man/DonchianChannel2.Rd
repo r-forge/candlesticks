@@ -40,7 +40,9 @@ the price bands on the \emph{previous} \code{n} price bars.
   See \code{\link{DonchianChannel}}.
 }
 \examples{
+\dontrun{
   getSymbols(YHOO, adjust=TRUE)
   dc <- DonchianChannel2(YHOO)
+}
 }
 \keyword{ ts }

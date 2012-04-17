@@ -4,19 +4,21 @@
 \title{Kicking Candlestick Pattern}
 \description{Look for bullish/bearish Kicking Candlestick Patterns in a OHLC price series}
 \usage{
-  CSPKicking(TS, ignoreShadows=TRUE, n=20, threshold=1.5)
+  CSPKicking(TS, ignoreShadows=TRUE, n=20, threshold=1, ATRFactor=1, maxshadowCL=.1)
 }
 \arguments{
   \item{TS}{xts Time Series containing OHLC prices}
   \item{ignoreShadows}{if TRUE, only Open and Close Price are evaluated. Hi and Low are ignored.}
-  \item{n}{number of preceding candles to calculate median candle length}
+  \item{n}{number of preceding candles to calculate median candle length or average True Range}
   \item{threshold}{minimum candle length in relation to the median candle length of \code{n} preceding candles}
+  \item{ATRFactor}{minimum size of candle body compared to the ATR}
+  \item{maxshadowCL}{maximum tolerated upper and lower shadow to candle length ratio}
 }
 \details{
   Number of candle lines: \bold{2}\cr\cr
   \emph{Bullish Kicking Pattern:}\cr
-  The Bullish Kicking Pattern is a White Marubozu following a Black Marubozu. After the Black Marubozu, market gaps higher on the opening and it opens with a gap above the prior session's opening thus forming a White Marubozu. This pattern is filtered with the option \code{ignoreShadows=FALSE}, and occurs very scarcely.\cr
-  A less strict filter rule is when \code{ignoreShadows=TRUE}. In this case, the pattern is detected when a long black candle body follows a long white candle body, and the open of the first candle is lower than the open of the second candle.\cr\cr
+  The Bullish Kicking Pattern is a White Marubozu following a Black Marubozu. After the Black Marubozu, market gaps higher on the opening and it opens with a gap above the prior session's opening thus forming a White Marubozu. This pattern is filtered with the option \code{ignoreShadows=FALSE}, and occurs very scarcely. When ignoreShadows=FALSE, the parameters \code{n}, \code{ATRFactor}, \code{maxshadowCL} are relevant to fine tune the filter rules.\cr\cr
+  A less strict filter rule is when \code{ignoreShadows=TRUE}. In this case, the pattern is detected when a long black candle body follows a long white candle body, and the open of the first candle is lower than the open of the second candle. When ignoreShadows=TRUE, the parameters \code{n} and \code{threshold} are relevant to fine tune the filter rules.\cr\cr
   \emph{Bearish Kicking Pattern:}\cr
   Opposite of Bullish Kicking Pattern.
 }
@@ -45,7 +47,7 @@ The following site(s) were used to code/document this indicator:\cr
   
   # look for Kicking Pattern right out of the textbook
   # they occur only once in a blue moon
-  CSPKicking(YHOO, ignoreShadows=FALSE)
+  CSPKicking(YHOO, ignoreShadows=FALSE, maxshadowCL=0)
   
   # use less strict filter rules
   CSPKicking(YHOO)

@@ -1,10 +1,10 @@
-CSPKicking <- function(TS, ignoreShadows=TRUE, n=20, threshold=1.5) {
+CSPKicking <- function(TS, ignoreShadows=TRUE, n=20, threshold=1, ATRFactor=1, maxshadowCL=.1) {
   if (!is.OHLC(TS)) {
     stop("Price series must contain Open, High, Low and Close.")
   }
   TSGAP <- CSPGap(TS, ignoreShadows=ignoreShadows)
   if (ignoreShadows==FALSE) {
-    MB <- CSPMarubozu(TS, n=n, threshold=threshold)
+    MB <- CSPMarubozu(TS, n=n, ATRFactor=ATRFactor, maxuppershadowCL=maxshadowCL, maxlowershadowCL=maxshadowCL)
     WMB1 <- Lag(MB[,1], k=1)
     BMB1 <- Lag(MB[,4], k=1)
     BULLK <- reclass( 
