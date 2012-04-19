@@ -7,10 +7,10 @@
 \title{N consecutive long candles / bodies of same color}
 \description{look for N consecutive long candles / long candle bodies of same color}
 \usage{
-CSPNLongWhiteCandles(TS, N=2, n=20, threshold=1.5)
-CSPNLongBlackCandles(TS, N=2, n=20, threshold=1.5)
-CSPNLongWhiteCandleBodies(TS, N=2, n=20, threshold=1.5)
-CSPNLongBlackCandleBodies(TS, N=2, n=20, threshold=1.5)
+CSPNLongWhiteCandles(TS, N=2, n=20, threshold=1)
+CSPNLongBlackCandles(TS, N=2, n=20, threshold=1)
+CSPNLongWhiteCandleBodies(TS, N=2, n=20, threshold=1)
+CSPNLongBlackCandleBodies(TS, N=2, n=20, threshold=1)
 }
 \arguments{
   \item{TS}{xts Time Series containing OHLC prices}

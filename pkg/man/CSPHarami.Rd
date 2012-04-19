@@ -3,11 +3,11 @@
 \alias{Harami}
 \title{Harami Candlestick Pattern}
 \description{Look for Bullish/Bearish Harami Pattern in a OHLC price series}
-\usage{CSPHarami(TS, excludeDoji=FALSE, DojiBLRatio=.1)}
+\usage{CSPHarami(TS, n=20, minbodysizeMedian=1)}
 \arguments{
-  \item{TS}{xts Time Series containing Open, High, Low and Close Prices}
-  \item{excludeDoji}{if TRUE the second candle must not be a doji}
-  \item{DojiBLRatio}{maximum body to lenght ratio to identify the second candle as doji, default = .1}
+  \item{TS}{xts Time Series containing Open and Close Prices}
+  \item{n}{number of preceding candles to calculate median candle body length}
+  \item{minbodysizeMedian}{Minimum body length of the first candle (mother candle) relative to the median of the past \code{n} body sizes}
 }
 \details{
   Number of candle lines: \bold{2}\cr\cr
@@ -27,12 +27,18 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   \url{http://www.candlesticker.com/Bullish.asp}\cr
   \url{http://www.candlesticker.com/Bearish.asp}
 }
-\note{Trend detection prior to the formation is not implemented yet}
-\seealso{}
+\note{The function filters patterns that look like haramis, without considering the current trend direction. If only pattern in uptrends should be filtered, a external trend detection function must be used. See examples.}
+\seealso{
+ \code{\link{CSPLongCandleBody}}
+}
 \examples{
 \dontrun{
   getSymbols('YHOO',adjust=TRUE)
   CSPHarami(YHOO)
+  
+  # filter for bullish harami that occour in downtrends
+  BullHarami <- eval(CSPHarami(YHOO)[,"Bull.Harami"] & 
+    TrendDetectionChannel(lag(YHOO,k=2))[,"DownTrend"])
 }
 }
 \keyword{}

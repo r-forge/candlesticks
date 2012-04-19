@@ -1,4 +1,4 @@
-CSPNLongWhiteCandles <- function(TS, N=2, n=20, threshold=1.5) {
+CSPNLongWhiteCandles <- function(TS, N=2, n=20, threshold=1) {
   if (!is.OHLC(TS)) {
     stop("Price series must contain Open, High, Low and Close.")
   }
@@ -12,7 +12,7 @@ CSPNLongWhiteCandles <- function(TS, N=2, n=20, threshold=1.5) {
   return (result)
 }
 
-CSPNLongBlackCandles <- function(TS, N=2, n=20, threshold=1.5) {
+CSPNLongBlackCandles <- function(TS, N=2, n=20, threshold=1) {
   if (!is.OHLC(TS)) {
     stop("Price series must contain Open, High, Low and Close.")
   }
@@ -26,7 +26,7 @@ CSPNLongBlackCandles <- function(TS, N=2, n=20, threshold=1.5) {
   return (result)
 }
 
-CSPNLongWhiteCandleBodies <- function(TS, N=2, n=20, threshold=1.5) {
+CSPNLongWhiteCandleBodies <- function(TS, N=2, n=20, threshold=1) {
   if (!is.OC(TS)) {
     stop("Price series must contain Open and Close.")
   }
@@ -40,7 +40,7 @@ CSPNLongWhiteCandleBodies <- function(TS, N=2, n=20, threshold=1.5) {
   return (result)
 }
 
-CSPNLongBlackCandleBodies <- function(TS, N=2, n=20, threshold=1.5) {
+CSPNLongBlackCandleBodies <- function(TS, N=2, n=20, threshold=1) {
   if (!is.OC(TS)) {
     stop("Price series must contain Open and Close.")
   }

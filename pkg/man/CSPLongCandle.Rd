@@ -10,9 +10,9 @@
 \title{Long/Short Candlestick (Body) Pattern}
 \description{Look for long/short candlesticks in a OHLC price series}
 \usage{
-CSPLongCandle(TS, n=20, threshold=1.5)
+CSPLongCandle(TS, n=20, threshold=1)
 CSPShortCandle(TS, n=20, threshold=1)
-CSPLongCandleBody(TS, n=20, threshold=1.5)
+CSPLongCandleBody(TS, n=20, threshold=1)
 CSPShortCandleBody(TS, n=20, threshold=1)}
 \arguments{
   \item{TS}{xts Time Series containing OHLC prices}

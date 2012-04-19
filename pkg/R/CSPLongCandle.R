@@ -1,4 +1,4 @@
-CSPLongCandle <- function(TS, n=20, threshold=1.5) {
+CSPLongCandle <- function(TS, n=20, threshold=1) {
   if (!is.OHLC (TS)) {
     stop("Price series must contain Open, High, Low and Close.")
   }
@@ -12,7 +12,7 @@ CSPLongCandle <- function(TS, n=20, threshold=1.5) {
   return (result)
 }
 
-CSPLongCandleBody <- function(TS, n=20, threshold=1.5) {
+CSPLongCandleBody <- function(TS, n=20, threshold=1) {
   if (!is.OC (TS)) {
     stop("Price series must contain Open and Close.")
   }

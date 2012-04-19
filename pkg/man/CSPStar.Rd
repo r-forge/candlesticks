@@ -5,13 +5,13 @@
 \title{Morning/Evening Star Candlestick Pattern}
 \description{Look for Morning/Evening Star Patterns in a OHLC price series}
 \usage{
-CSPStar(TS, n=20, lthreshold=1.5, sthreshold=1)
+CSPStar(TS, n=20, minbodysizeMedian=1, maxbodysizeMedian=1)
 }
 \arguments{
   \item{TS}{xts Time Series containing OHLC prices}
   \item{n}{number of preceding candles to calculate median candle length}
-  \item{lthreshold}{minimum candle length in relation to the median candle length of the formation's \emph{first} candle}
-  \item{sthreshold}{maximum candle length in relation to the median candle length of the formation's \emph{second} candle}
+  \item{minbodysizeMedian}{minimum candle length in relation to the median candle length of the formation's \emph{first} candle}
+  \item{maxbodysizeMedian}{maximum candle length in relation to the median candle length of the formation's \emph{second} candle}
 }
 \details{
   Number of candle lines: \bold{3}\cr\cr
@@ -31,13 +31,21 @@ The following site(s) were used to code/document this indicator:\cr
   \url{http://www.candlesticker.com/Bullish.asp}\cr
   \url{http://www.candlesticker.com/Bearish.asp}
 }
-\note{Trend detection prior to the formation is not implemented yet}
-\seealso{}
+\note{The function filters patterns that look like morning/evening stars, without considering the current trend direction. If only pattern in uptrends should be filtered, a external trend detection function must be used. See examples.}
+\seealso{
+ \code{\link{CSPLongCandleBody}}
+}
 \examples{
 \dontrun{
   getSymbols('YHOO',adjust=TRUE)
   CSPStar(YHOO)
-  CSPStar(YHOO, sthreshold=.5) # allow only a small second candle body
+  
+  # allow only a small second candle body
+  CSPStar(YHOO, maxbodysizeMedian=.5)
+  
+  # filter for morning stars that occour in downtrends
+  MorningStar <- eval(CSPStar(YHOO)[,"MorningStar"] & 
+    TrendDetectionChannel(lag(YHOO,k=3))[,"DownTrend"])
 }
 }
 \keyword{}

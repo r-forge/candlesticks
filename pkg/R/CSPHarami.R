@@ -1,22 +1,19 @@
-CSPHarami <- function(TS, excludeDoji=FALSE, DojiBLRatio=.1) {
-  if (!is.OHLC(TS)) {
+CSPHarami <- function(TS, n=20, minbodysizeMedian=1) {
+  if (!is.OC(TS)) {
     stop("Price series must contain Open, High, Low and Close.")
   }
-  LAGTS <- LagOHLC(TS, k=1)
-  BullHarami <- reclass(eval( 
-    Op(LAGTS)>Cl(LAGTS) & Cl(TS)>Op(TS)
-    & Op(LAGTS)>Cl(TS) & Cl(LAGTS)<Op(TS) 
-    & Hi(LAGTS)>=Hi(TS) & Lo(LAGTS)<=Lo(TS) ), TS)
-  BearHarami <- reclass(eval( 
-    Cl(LAGTS)>Op(LAGTS) & Op(TS)>Cl(TS) 
-    & Cl(LAGTS)>Op(TS) & Op(LAGTS)<Cl(TS) 
-    & Hi(LAGTS)>=Hi(TS) & Lo(LAGTS)<=Lo(TS) ), TS)
-  # some don't accept the second candle being a doji
-  if (excludeDoji==TRUE) {
-    Doji <- CSPDoji(TS, DojiBLRatio)
-    BullHarami <- reclass(eval(BullHarami & !Doji[,1]), TS)
-    BearHarami <- reclass(eval(BearHarami & !Doji[,1]), TS)
-  }
+  LAGTS <- LagOC(TS, k=1)
+  LongCandleBody <- CSPLongCandleBody(LAGTS, n=n, threshold=minbodysizeMedian)
+  BullHarami <- reclass(eval(
+    LongCandleBody[,2] &                     # body of mother candle is black and longer than average
+    Cl(TS)>Op(TS) &                          # second candle is white
+    Op(LAGTS)>Cl(TS) & Cl(LAGTS)<Op(TS)      # second body is within first body
+    ), TS)
+  BearHarami <- reclass(eval(
+    LongCandleBody[,1] &                     # body of mother candle is white and longer than average
+    Cl(TS)<Op(TS) &                          # second candle is white
+    Op(LAGTS)<Cl(TS) & Cl(LAGTS)>Op(TS)      # second body is within first body
+    ), TS)
   result <- cbind(BullHarami, BearHarami)
   colnames(result) <- c("Bull.Harami", "Bear.Harami")
   xtsAttributes(result) <- list(bars=2)
