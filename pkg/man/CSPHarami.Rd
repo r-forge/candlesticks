@@ -37,8 +37,8 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   CSPHarami(YHOO)
   
   # filter for bullish harami that occour in downtrends
-  BullHarami <- eval(CSPHarami(YHOO)[,"Bull.Harami"] & 
-    TrendDetectionChannel(lag(YHOO,k=2))[,"DownTrend"])
+  BullHarami <- CSPHarami(YHOO)[,"Bull.Harami"] & 
+    TrendDetectionChannel(lag(YHOO,k=2))[,"DownTrend"]
 }
 }
 \keyword{}

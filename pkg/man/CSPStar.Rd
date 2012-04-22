@@ -44,8 +44,8 @@ The following site(s) were used to code/document this indicator:\cr
   CSPStar(YHOO, maxbodysizeMedian=.5)
   
   # filter for morning stars that occour in downtrends
-  MorningStar <- eval(CSPStar(YHOO)[,"MorningStar"] & 
-    TrendDetectionChannel(lag(YHOO,k=3))[,"DownTrend"])
+  MorningStar <- (CSPStar(YHOO)[,"MorningStar"] & 
+    TrendDetectionChannel(lag(YHOO,k=3))[,"DownTrend"]
 }
 }
 \keyword{}

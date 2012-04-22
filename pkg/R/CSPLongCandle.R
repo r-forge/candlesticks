@@ -4,8 +4,8 @@ CSPLongCandle <- function(TS, n=20, threshold=1) {
   }
   CL <- CandleLength (TS)
   CLMedian <- runMedian (CL[,1], n=n) # use relative CandleLength
-  LongWhiteCandle <- reclass(eval (CL[,1] >= CLMedian*threshold & Cl(TS) >= Op(TS)), TS)
-  LongBlackCandle <- reclass(eval (CL[,1] >= CLMedian*threshold & Op(TS) > Cl(TS)), TS)
+  LongWhiteCandle <- reclass( CL[,1] >= CLMedian*threshold & Cl(TS) >= Op(TS) , TS)
+  LongBlackCandle <- reclass( CL[,1] >= CLMedian*threshold & Op(TS) > Cl(TS) , TS)
   result <- cbind (LongWhiteCandle, LongBlackCandle)
   colnames (result) <- c("LongWhiteCandle", "LongBlackCandle")
   xtsAttributes(result) <- list(bars=1)
@@ -18,8 +18,8 @@ CSPLongCandleBody <- function(TS, n=20, threshold=1) {
   }
   CBL <- CandleBodyLength (TS)
   CBLMedian <- runMedian (CBL[,1], n=n) # use relative CandleBodyLength
-  LongWhiteCandleBody <- reclass(eval (CBL[,1] >= CBLMedian*threshold & Cl(TS) >= Op(TS)), TS)
-  LongBlackCandleBody <- reclass(eval (CBL[,1] >= CBLMedian*threshold & Op(TS) > Cl(TS)), TS)
+  LongWhiteCandleBody <- reclass( CBL[,1] >= CBLMedian*threshold & Cl(TS) >= Op(TS), TS)
+  LongBlackCandleBody <- reclass( CBL[,1] >= CBLMedian*threshold & Op(TS) > Cl(TS), TS)
   result <- cbind (LongWhiteCandleBody, LongBlackCandleBody)
   colnames (result) <- c("LongWhiteCandleBody", "LongBlackCandleBody")
   xtsAttributes(result) <- list(bars=1)
@@ -32,8 +32,8 @@ CSPShortCandle <- function(TS, n=20, threshold=1) {
   }
   CL <- CandleLength (TS)
   CLMedian <- runMedian (CL[,1], n=n) # use relative CandleLength
-  ShortWhiteCandle <- reclass(eval (CL[,1] < CLMedian*threshold & Cl(TS) >= Op(TS)), TS)
-  ShortBlackCandle <- reclass(eval (CL[,1] < CLMedian*threshold & Op(TS) > Cl(TS)), TS)
+  ShortWhiteCandle <- reclass( CL[,1] < CLMedian*threshold & Cl(TS) >= Op(TS) , TS)
+  ShortBlackCandle <- reclass( CL[,1] < CLMedian*threshold & Op(TS) > Cl(TS ), TS)
   result <- cbind (ShortWhiteCandle, ShortBlackCandle)
   colnames (result) <- c("LongWhiteCandle", "LongBlackCandle")
   xtsAttributes(result) <- list(bars=1)
@@ -46,8 +46,8 @@ CSPShortCandleBody <- function(TS, n=20, threshold=1) {
   }
   CBL <- CandleBodyLength (TS)
   CBLMedian <- runMedian (CBL[,1], n=n) # use relative CandleBodyLength
-  ShortWhiteCandleBody <- reclass(eval (CBL[,1] < CBLMedian*threshold & Cl(TS) >= Op(TS)), TS)
-  ShortBlackCandleBody <- reclass(eval (CBL[,1] < CBLMedian*threshold & Op(TS) > Cl(TS)), TS)
+  ShortWhiteCandleBody <- reclass( CBL[,1] < CBLMedian*threshold & Cl(TS) >= Op(TS), TS)
+  ShortBlackCandleBody <- reclass( CBL[,1] < CBLMedian*threshold & Op(TS) > Cl(TS), TS)
   result <- cbind (ShortWhiteCandleBody, ShortBlackCandleBody)
   colnames (result) <- c("ShortWhiteCandleBody", "ShortBlackCandleBody")
   xtsAttributes(result) <- list(bars=1)

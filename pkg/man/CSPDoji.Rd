@@ -40,7 +40,7 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   CSPDoji(YHOO, DojiBLRatio=0)
   
   # filter for gravestone doji patterns that occur in uptrends
-  eval(CSPDoji(YHOO)[,"GravestoneDoji"] & TrendDetectionChannel(YHOO)[,"UpTrend"])
+  CSPDoji(YHOO)[,"GravestoneDoji"] & TrendDetectionChannel(YHOO)[,"UpTrend"]
 }
 }
 \keyword{}

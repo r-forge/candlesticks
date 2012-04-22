@@ -28,7 +28,7 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   \url{http://www.candlesticker.com/Bullish.asp}\cr
   \url{http://www.candlesticker.com/Bearish.asp}
 }
-\note{Trend detection prior to the formation is not implemented yet}
+\note{The function filters patterns that look like three inside up/down, without considering the current trend direction. If only pattern in downtrends should be filtered, a external trend detection function must be used. See examples.}
 \seealso{
   \code{\link{CSPHarami}}
   \code{\link{CSPThreeOutside}}
@@ -37,5 +37,8 @@ The following site(s) were used to code/document this candlestick pattern:\cr
 \dontrun{
   getSymbols('YHOO',adjust=TRUE)
   CSPThreeInside(YHOO)
+  
+  # filter three inside up in downtrends
+  CSPThreeInside(YHOO)[,"ThreeInsideUp"] & TrendDetectionChannel(lag(YHOO,k=3))[,"DownTrend"]
 }
 }

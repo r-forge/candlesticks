@@ -3,7 +3,7 @@ CSPInsideDay <- function(TS) {
     stop("Price series must contain Open, High, Low and Close.")
   }
   LAGTS <- LagOHLC(TS, k=1)
-  result <- reclass(eval(Hi(TS)<=Hi(LAGTS) & Lo(TS)>=Lo(LAGTS)), TS)
+  result <- reclass( Hi(TS)<=Hi(LAGTS) & Lo(TS)>=Lo(LAGTS) , TS)
   colnames(result) <- "InsideDay"
   xtsAttributes(result) <- list(bars=2)
   return (result)
@@ -14,7 +14,7 @@ CSPOutsideDay <- function(TS) {
     stop("Price series must contain Open, High, Low and Close.")
   }
   LAGTS <- LagOHLC(TS, k=1)
-  result <- reclass(eval(Hi(TS)>Hi(LAGTS) & Lo(TS)<Lo(LAGTS)), TS)
+  result <- reclass( Hi(TS)>Hi(LAGTS) & Lo(TS)<Lo(LAGTS) , TS)
   colnames(result) <- "OutsideDay"
   xtsAttributes(result) <- list(bars=2)
   return (result)

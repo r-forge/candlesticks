@@ -39,8 +39,11 @@ The following site(s) were used to code/document this indicator:\cr
   CSPThreeBlackCrows(YHOO, strict=FALSE)
   
   # filter for three black crows that occur in uptrends
-  ThreeBlackCrows <- eval(CSPThreeBlackCrows(YHOO) & 
-    TrendDetectionChannel(lag(YHOO,k=3))[,"UpTrend"])
+  ThreeBlackCrows <- CSPThreeBlackCrows(YHOO) & 
+    TrendDetectionChannel(lag(YHOO,k=3))[,"UpTrend"]
+    
+  # how often does that occur?
+  colSums(ThreeBlackCrows, na.rm=TRUE)
 }
 }
 \keyword{}

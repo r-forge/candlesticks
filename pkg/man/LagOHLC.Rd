@@ -24,10 +24,10 @@
 }
 \examples{
 \dontrun{
-getSymbols('YHOO')
-LagOHLC(YHOO)        # Lag OHLC series by one period
-LagOHLC(YHOO, k=1:3) # Lag OHLC series by one, two and three periods
-                     # this will return a 12 columns xts object
+  getSymbols('YHOO')
+  LagOHLC(YHOO)        # Lag OHLC series by one period
+  LagOHLC(YHOO, k=1:3) # Lag OHLC series by one, two and three periods
+                       # this will return a 12 columns xts object
 }
 }
 \author{Andreas Voellenklee}

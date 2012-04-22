@@ -38,7 +38,7 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   CSPHangingMan(YHOO)
   
   # filter for hanging man patterns that occur in uptrends
-  eval(CSPHangingMan(YHOO) & TrendDetectionChannel(YHOO)[,"UpTrend"])
+  CSPHangingMan(YHOO) & TrendDetectionChannel(YHOO)[,"UpTrend"]
 }
 }
 \keyword{}

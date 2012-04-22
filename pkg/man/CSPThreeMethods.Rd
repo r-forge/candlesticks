@@ -33,12 +33,15 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   \url{http://www.candlesticker.com/Bullish.asp}\cr
   \url{http://www.candlesticker.com/Bearish.asp}
 }
-\note{Trend detection prior to the formation is not implemented yet}
+\note{The function filters patterns that look like three methods, without considering the current trend direction. If only pattern in uptrends should be filtered, a external trend detection function must be used. See examples.}
 \seealso{}
 \examples{
 \dontrun{
   getSymbols('URZ',adjust=TRUE)
   CSPThreeMethods(URZ)
+  
+  # filter rising three methods in uptrends
+  CSPThreeMethods(URZ)[,"RisingThreeMethods"] & TrendDetectionChannel(lag(URZ,k=5))[,"UpTrend"]
 }
 }
 \keyword{}

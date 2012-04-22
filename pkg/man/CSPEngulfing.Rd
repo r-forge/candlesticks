@@ -29,12 +29,13 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   \url{http://www.candlesticker.com/Bullish.asp}\cr
   \url{http://www.candlesticker.com/Bearish.asp}
 }
-\note{Trend detection prior to the formation is not implemented yet}
+\note{The function filters patterns that look like engulfing pattern, without considering the current trend direction. If only pattern in uptrends/downtrends should be filtered, a external trend detection function must be used. See examples.}
 \seealso{}
 \examples{
 \dontrun{
   getSymbols('YHOO',adjust=TRUE)
   CSPEngulfing(YHOO)
+  CSPEngulfing(YHOO)[,"Bear.Engulfing"] & TrendDetectionChannel(YHOO)[,"UpTrend"]
 }
 }
 \keyword{}

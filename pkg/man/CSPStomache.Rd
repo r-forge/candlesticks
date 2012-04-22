@@ -29,12 +29,15 @@ The following site(s) were used to code/document this indicator:\cr
   \url{http://www.thepatternsite.com/AboveStomach.html}\cr
   \url{http://www.thepatternsite.com/BelowStomach.html}
 }
-\note{Trend detection prior to the formation is not implemented yet}
+\note{The function filters patterns that look like above/below the stomache, without considering the current trend direction. If only above the stomache pattern in downtrends should be filtered, a external trend detection function must be used. See examples.}
 \seealso{}
 \examples{
 \dontrun{
   getSymbols('YHOO',adjust=TRUE)
   CSPStomache(YHOO)
+  
+  # filter above the stomache pattern in downtrends
+  CSPStomache(YHOO)[,"AboveTheStomache"] & TrendDetectionChannel(lag(YHOO,k=2))[,"DownTrend"]
 }
 }
 \keyword{}

@@ -34,7 +34,7 @@ The following site(s) were used to code/document this indicator:\cr
   # the lag of 2 periods of the time series for trend detection
   # ensures that the uptrend is active \emph{before} the
   # dark cloud cover occurs.
-  eval(CSPPiercingPattern(YHOO) & TrendDetectionChannel(lag(YHOO,k=2))[,"DownTrend"])
+  CSPPiercingPattern(YHOO) & TrendDetectionChannel(lag(YHOO,k=2))[,"DownTrend"]
 }
 }
 \keyword{}

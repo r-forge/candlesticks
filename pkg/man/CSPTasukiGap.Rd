@@ -29,14 +29,17 @@ The following site(s) were used to code/document this indicator:\cr
   \url{http://thepatternsite.com/UpsideTasukiGap.html}\cr
   \url{http://thepatternsite.com/DownsideTasukiGap.html}\cr
 }
-\note{Trend detection prior to the formation is not implemented yet}
+\note{The function filters patterns that look like tasuki gap patterns, without considering the current trend direction. If only upside tasuki gaps in uptrends should be filtered, a external trend detection function must be used. See examples.}
 \seealso{
 \code{\link{CSPGap}}
 }
 \examples{
 \dontrun{
-getSymbols("SSRI", adjust=TRUE)
-CSPTasukiGap(SSRI)
+  getSymbols("SSRI", adjust=TRUE)
+  CSPTasukiGap(SSRI)
+
+  # filter upside tasuki gaps in uptrends
+  CSPTasukiGap(SSRI)[,"UpsideTasukiGap"] & TrendDetectionChannel(lag(SSRI,k=5))[,"UpTrend"]
 }
 }
 \keyword{}

@@ -27,12 +27,18 @@ This function assumes that a price series is in uptrend (downtrend) when a perio
 \examples{
 \dontrun{
   getSymbols("YHOO", adjust=TRUE)
+  
   # create chart of YAHOO
   chartSeries(YHOO, subset="last 1 year", TA=NULL)
+  
   # visualize the result of trend detection in a indicator box
   addTA(TrendDetectionSMA(YHOO)[,4])
+  
   # filter YHOO for Hammer Candlestick Patterns that occur in downtrends
-  eval(CSPHammer(TS) & TrendDetectionSMA(TS)[,"DownTrend"])
+  Hammer <- CSPHammer(TS) & TrendDetectionSMA(TS)[,"DownTrend"]
+  
+  # how frequent are these hammers?
+  colSums(Hammer, na.rm=TRUE)
 }
 }
 \keyword{}

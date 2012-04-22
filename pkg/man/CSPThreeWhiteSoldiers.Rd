@@ -39,8 +39,11 @@ The following site(s) were used to code/document this indicator:\cr
   CSPThreeWhiteSoldiers(YHOO, strict=FALSE)
   
   # filter for three white soldiers that occur in downtrends
-  ThreeWhiteSoldiers <- eval(CSPThreeWhiteSoldiers(YHOO) & 
-    TrendDetectionChannel(lag(YHOO,k=3))[,"DownTrend"])
+  ThreeWhiteSoldiers <- CSPThreeWhiteSoldiers(YHOO) & 
+    TrendDetectionChannel(lag(YHOO,k=3))[,"DownTrend"]
+  
+  # how often does that occur?
+  colSums(ThreeWhiteSoldiers, na.rm=TRUE)
 }
 }
 \keyword{}

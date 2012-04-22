@@ -35,10 +35,10 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   getSymbols('YHOO',adjust=TRUE)
   
   # filter for hammer patterns
-  CSPHammer(YHOO
+  CSPHammer(YHOO)
   
   # filter for hammer patterns that occur in downtrends
-  eval(CSPHammer(YHOO) & TrendDetectionChannel(YHOO)[,"DownTrend"])
+  CSPHammer(YHOO) & TrendDetectionChannel(YHOO)[,"DownTrend"]
 }
 }
 \keyword{}
