@@ -39,7 +39,7 @@ The following site(s) were used to code/document this indicator:\cr
   CSPTasukiGap(SSRI)
 
   # filter upside tasuki gaps in uptrends
-  CSPTasukiGap(SSRI)[,"UpsideTasukiGap"] & TrendDetectionChannel(lag(SSRI,k=5))[,"UpTrend"]
+  CSPTasukiGap(SSRI)[,"UpsideTasukiGap"] & TrendDetectionChannel(lag(SSRI,k=3))[,"UpTrend"]
 }
 }
 \keyword{}
