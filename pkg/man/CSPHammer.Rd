@@ -12,7 +12,7 @@
 }
 \details{
 Number of candle lines: \bold{1}\cr\cr
-The hammer is a one-day formation. This patter is expected to be a early sign for the reversal of a downtrend into an uptrend. It has got a long lower shadow, a small body at the top of the candle, and no or only a very short upper shadow. The color of the body is not important. The counterpart of this pattern is \code{\link{HangingMan}}.
+The hammer is a one-day formation. This patter is expected to be a early sign for the reversal of a downtrend into an uptrend. It has got a long lower shadow, a small body at the top of the candle, and no or only a very short upper shadow. The color of the body is not important.
 }
 \value{
   A xts object containing the column:
@@ -26,7 +26,6 @@ The following site(s) were used to code/document this candlestick pattern:\cr
 \note{The function filters candles that look like hammers, without considering the current trend direction. If only hammer patterns in a downtrend should be filtered, a external trend detection function must be used. See examples.}
 \seealso{
 \code{\link{CSPDoji}}
-\code{\link{CSPHangingMan}}
 \code{\link{TrendDetectionChannel}}
 \code{\link{TrendDetectionSMA}}
 }
