@@ -43,4 +43,5 @@ export(CandleLength)
 export(DonchianChannel2)
 export(is.HL)
 export(is.OC)
+export(nextCandlePosition)
 

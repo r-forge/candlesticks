@@ -32,7 +32,7 @@ The following site(s) were used to code/document this indicator:\cr
   
   # filter piercing patterns that occur in downtrends.
   # the lag of 2 periods of the time series for trend detection
-  # ensures that the uptrend is active \emph{before} the
+  # ensures that the uptrend is active *before* the
   # dark cloud cover occurs.
   CSPPiercingPattern(YHOO) & TrendDetectionChannel(lag(YHOO,k=2))[,"DownTrend"]
 }
