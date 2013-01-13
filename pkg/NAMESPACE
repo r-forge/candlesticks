@@ -44,4 +44,7 @@ export(DonchianChannel2)
 export(is.HL)
 export(is.OC)
 export(nextCandlePosition)
-
+# candle average functions
+export(OHLC_Average)
+export(HLC_Average)
+export(HL_Average)
