@@ -6,7 +6,7 @@
 \description{Calculates the average value of different price levels within a price bar.}
 \usage{
   OHLC_Average(TS)
-  OHL_Average(TS)
+  HLC_Average(TS)
   HL_Average(TS)
 }
 \arguments{
