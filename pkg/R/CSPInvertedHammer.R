@@ -3,8 +3,8 @@ CSPInvertedHammer <- function(TS, minuppershadowCL=2/3, maxlowershadowCL=.1, min
     stop("Price series must contain Open, High, Low and Close.")
   }
   CL <- Hi(TS)-Lo(TS)
-  BodyHi <- as.xts(apply(cbind(Op(TS),Cl(TS)),1,max))
-  BodyLo <- as.xts(apply(cbind(Op(TS),Cl(TS)),1,min))
+  BodyHi <- pmax(Op(TS),Cl(TS))
+  BodyLo <- pmin(Op(TS),Cl(TS))
   InvertedHammer <- reclass(
     Hi(TS)- BodyHi > CL*minuppershadowCL &   # upper shadow greater than lowershadowCL*CandleLength
     BodyLo- Lo(TS) <= CL*maxlowershadowCL &  # lower shadow missing or very short

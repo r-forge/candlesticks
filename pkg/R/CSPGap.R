@@ -6,8 +6,8 @@ CSPGap <- function (TS, ignoreShadows=FALSE) {
     LAGTS <- LagOC(TS, k=1)
     TSOC <- cbind(Op(TS), Cl(TS))
     LAGTSOC <- cbind(Op(LAGTS), Cl(LAGTS))
-    UPGAP <- reclass( as.xts(apply(LAGTSOC,1,max)) < as.xts(apply(TSOC,1,min)) , TS)
-    DOWNGAP <- reclass( as.xts(apply(LAGTSOC,1,min)) > as.xts(apply(TSOC,1,max)), TS)
+    UPGAP <- reclass( pmax(Op(LAGTSOC), Cl(LAGTSOC)) < pmin(Op(TSOC), Cl(TSOC)) , TS)
+    DOWNGAP <- reclass( pmin(Op(LAGTSOC), Cl(LAGTSOC)) > pmax(Op(TSOC), Cl(TSOC)), TS)
   }
   else if (ignoreShadows==FALSE) {
     if (!is.OHLC(TS)) {

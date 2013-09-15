@@ -1,7 +1,7 @@
 Package: candlesticks
 Type: Package
 Title: Candlestick Pattern Recognition
-Version: 0.2-2
+Version: 0.2-3
 Date: 2013-07-24
 Author: Andreas Voellenklee
 Maintainer: Andreas Voellenklee <wotuzu17@gmail.com>
