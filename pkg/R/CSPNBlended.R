@@ -9,8 +9,8 @@ CSPNBlended <- function (TS, N) {
   
   LAGTS <- LagOHLC(TS,k=0:(N-1))
   OP <- Op(LAGTS)[,N]
-  HI <- reclass(as.xts(apply(Hi(LAGTS),1,max)), TS)
-  LO <- reclass(as.xts(apply(Lo(LAGTS),1,min)), TS)
+  HI <- reclass(as.xts(apply(Hi(LAGTS),1,max), dateFormat=indexClass(try.xts(TS)[1])), TS)
+  LO <- reclass(as.xts(apply(Lo(LAGTS),1,min), dateFormat=indexClass(try.xts(TS)[1])), TS)
   CL <- Cl(LAGTS)[,1]
   result <- cbind(OP,HI,LO,CL)
   colnames(result) <- c(paste(N, ".Blended.Open", sep=""), 

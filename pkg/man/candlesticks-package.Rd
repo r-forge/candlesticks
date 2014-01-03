@@ -31,9 +31,7 @@ Maintainer: Andreas Voellenklee <wotuzu17@gmail.com>
 }
 \keyword{ package }
 \note{
-Some functions seem to have problems with timezone settings. It is recommended to set the session's timezone to UTC (command: \code{Sys.setenv(TZ="UTC")} ) in order to prevent issues.
-
-All candlestick pattern detection functions \code{(CSP*)} preserve the xts time series' attributes and add one attribute \code{bars}, that represents the number of bars the formation consits of.
+All candlestick pattern detection functions \code{(CSP*)} preserve the xts time series' attributes and add one attribute \code{bars}, that represents the number of bars the formation consists of.
 }
 \seealso{
 
