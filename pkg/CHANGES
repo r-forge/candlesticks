@@ -1,3 +1,3 @@
 0.1-1 va            initial version
 0.2-5 va 2015-05-25 svn update to trigger build process on R-forge
-
+0.2-6 va 2018-09-01 lag -> stats::lag to prevent issues with dplyr

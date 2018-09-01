@@ -11,7 +11,7 @@ DonchianChannel2 <- function(HL, n = 10) {
     high <- runMax(hi, n)
     low <- runMin(lo, n)
     mid <- (high + low)/2
-    result <- lag(cbind(high, mid, low))
+    result <- stats::lag(cbind(high, mid, low))
     colnames(result) <- c("high", "mid", "low")
     return(result)
   }
