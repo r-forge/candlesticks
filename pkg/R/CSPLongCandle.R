@@ -35,7 +35,7 @@ CSPShortCandle <- function(TS, n=20, threshold=1) {
   ShortWhiteCandle <- reclass( CL[,1] < CLMedian*threshold & Cl(TS) >= Op(TS) , TS)
   ShortBlackCandle <- reclass( CL[,1] < CLMedian*threshold & Op(TS) > Cl(TS ), TS)
   result <- cbind (ShortWhiteCandle, ShortBlackCandle)
-  colnames (result) <- c("LongWhiteCandle", "LongBlackCandle")
+  colnames (result) <- c("ShortWhiteCandle", "ShortBlackCandle")
   xtsAttributes(result) <- list(bars=1)
   return (result)
 }
