@@ -41,4 +41,3 @@ The following site(s) were used to code/document this candlestick pattern:\cr
     TrendDetectionChannel(lag(YHOO,k=2))[,"DownTrend"]
 }
 }
-\keyword{}

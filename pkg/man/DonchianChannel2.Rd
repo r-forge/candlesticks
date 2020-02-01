@@ -34,7 +34,7 @@ the price bands on the \emph{previous} \code{n} price bars.
 \author{ G See }
 \references{
   The following site(s) were used to code/document this indicator:\cr
-  \url{http://www.linnsoft.com/tour/techind/donch.htm}\cr
+  \url{https://www.investopedia.com/terms/d/donchianchannels.asp}\cr
 }
 \seealso{
   See \code{\link{DonchianChannel}}.

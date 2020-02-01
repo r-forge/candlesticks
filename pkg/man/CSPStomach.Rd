@@ -30,7 +30,6 @@ The following site(s) were used to code/document this indicator:\cr
   \url{http://www.thepatternsite.com/BelowStomach.html}
 }
 \note{The function filters patterns that look like above/below the Stomach, without considering the current trend direction. If only above the Stomach pattern in downtrends should be filtered, a external trend detection function must be used. See examples.}
-\seealso{}
 \examples{
 \dontrun{
   getSymbols('YHOO',adjust=TRUE)
@@ -40,4 +39,3 @@ The following site(s) were used to code/document this indicator:\cr
   CSPStomach(YHOO)[,"AboveTheStomach"] & TrendDetectionChannel(lag(YHOO,k=2))[,"DownTrend"]
 }
 }
-\keyword{}

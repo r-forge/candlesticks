@@ -34,4 +34,3 @@ CSPInvertedHammer(YHOO) &
 }
 }
 \author{Andreas Voellenklee}
-\keyword{}

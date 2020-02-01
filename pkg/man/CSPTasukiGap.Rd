@@ -42,4 +42,3 @@ The following site(s) were used to code/document this indicator:\cr
   CSPTasukiGap(SSRI)[,"UpsideTasukiGap"] & TrendDetectionChannel(lag(SSRI,k=3))[,"UpTrend"]
 }
 }
-\keyword{}

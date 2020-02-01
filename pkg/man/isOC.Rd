@@ -27,4 +27,3 @@ is.HL(YHOO)
 }
 }
 \author{Andreas Voellenklee}
-\keyword{}

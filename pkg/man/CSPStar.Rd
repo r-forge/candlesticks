@@ -48,4 +48,3 @@ The following site(s) were used to code/document this indicator:\cr
     TrendDetectionChannel(lag(YHOO,k=3))[,"DownTrend"]
 }
 }
-\keyword{}

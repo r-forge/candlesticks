@@ -31,4 +31,3 @@
 }
 }
 \author{Andreas Voellenklee}
-\keyword{}

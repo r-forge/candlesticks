@@ -19,10 +19,6 @@ Only the close price is evaluated. The colors of the candles are ignored.
   \item{<N>LowerClose}{TRUE if current close is the \code{N}th lower close in a row}
 }
 \author{Andreas Voellenklee}
-\references{
-}
-\note{}
-\seealso{}
 \examples{
 \dontrun{
   getSymbols('YHOO',adjust=TRUE)
@@ -30,4 +26,3 @@ Only the close price is evaluated. The colors of the candles are ignored.
   CSPNLowerClose(YHOO, N=4) # filter for 4 consecutive lower close
 }
 }
-\keyword{}

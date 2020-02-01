@@ -21,9 +21,7 @@
   \item{GapDown}{TRUE if gap down detected}
 }
 \author{Andreas Voellenklee}
-\references{}
 \note{The up/down gaps are also called \emph{Rising Window}/\emph{Falling Window}}
-\seealso{}
 \examples{
 \dontrun{
   getSymbols('YHOO',adjust=TRUE)
@@ -31,4 +29,3 @@
   CSPGap(YHOO, ignoreShadows=TRUE) # examine only candle bodies
 }
 }
-\keyword{}

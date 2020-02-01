@@ -34,7 +34,6 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   \url{http://www.candlesticker.com/Bearish.asp}
 }
 \note{The function filters patterns that look like three methods, without considering the current trend direction. If only pattern in uptrends should be filtered, a external trend detection function must be used. See examples.}
-\seealso{}
 \examples{
 \dontrun{
   getSymbols('URZ',adjust=TRUE)
@@ -44,4 +43,3 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   CSPThreeMethods(URZ)[,"RisingThreeMethods"] & TrendDetectionChannel(lag(URZ,k=5))[,"UpTrend"]
 }
 }
-\keyword{}

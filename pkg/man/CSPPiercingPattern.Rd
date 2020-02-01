@@ -37,4 +37,3 @@ The following site(s) were used to code/document this indicator:\cr
   CSPPiercingPattern(YHOO) & TrendDetectionChannel(lag(YHOO,k=2))[,"DownTrend"]
 }
 }
-\keyword{}

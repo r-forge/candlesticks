@@ -8,8 +8,6 @@
   \item{TS}{xts Time Series containing OHLC prices}
   \item{N}{number of bars to combine into one bar}
 }
-\details{
-}
 \value{
 A xts object containing the columns:
   \item{<N>.Blended.Open}{Opening price of the \code{N}-th elapsed candle}
@@ -18,8 +16,6 @@ A xts object containing the columns:
   \item{<N>.Blended.Close}{Close price of the current candle}
 }
 \author{Andreas Voellenklee}
-\references{
-}
 \note{This function is used by \code{\link{addPriceInfo}} to add price information of detected candlestick patterns}
 \seealso{
 \code{\link{addPriceInfo}}
@@ -30,4 +26,3 @@ getSymbols("YHOO", adjust=TRUE)
 CSPNBlended(YHOO, N=3)  # combine 3 candles into one
 }
 }
-\keyword{}

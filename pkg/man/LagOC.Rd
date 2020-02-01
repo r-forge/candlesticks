@@ -31,4 +31,3 @@ LagOC(YHOO, k=1:3) # Lag OC series by one, two and three periods
 }
 }
 \author{Andreas Voellenklee}
-\keyword{}

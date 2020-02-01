@@ -31,6 +31,7 @@ The following site(s) were used to code/document this indicator:\cr
   \code{\link{ThreeBlackCrows}}
   \code{\link{CSPNLongWhiteCandles}}
   \code{\link{CSPNLongWhiteCandleBodies}}
+  \code{\link{CSPThreeLineStrike}}
 }
 \examples{
 \dontrun{
@@ -46,4 +47,4 @@ The following site(s) were used to code/document this indicator:\cr
   colSums(ThreeWhiteSoldiers, na.rm=TRUE)
 }
 }
-\keyword{}
+

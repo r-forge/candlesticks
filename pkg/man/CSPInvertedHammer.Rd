@@ -41,4 +41,3 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   CSPInvertedHammer(YHOO) & TrendDetectionChannel(YHOO)[,"DownTrend"]
 }
 }
-\keyword{}

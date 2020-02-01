@@ -24,10 +24,6 @@ HL Average = (High + Low) / 2\cr
   \item{HLC_Average}{}
   \item{HL_Average}{}
 }
-\note{
-}
-\seealso{
-}
 \examples{
 \dontrun{
 # calculate average prices for a daily OHLC price series
@@ -38,4 +34,3 @@ head(cbind(OHLC_Average(YHOO),
 }
 }
 \author{Andreas Voellenklee}
-\keyword{}

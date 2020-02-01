@@ -39,8 +39,6 @@ To classify a candle a short candle, the relative length must be smaller than \c
   \item{ShortBlackCandleBody}{TRUE if Short Black Candle Body detected}
 }
 \author{Andreas Voellenklee}
-\references{}
-\note{}
 \seealso{\code{\link{CandleLength}}, \code{\link{CSPNLongCandles}}}
 \examples{
 \dontrun{
@@ -51,4 +49,3 @@ To classify a candle a short candle, the relative length must be smaller than \c
   CSPShortCandleBody(YHOO)
 }
 }
-\keyword{}

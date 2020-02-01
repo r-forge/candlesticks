@@ -49,4 +49,3 @@ In default settings, the candle \emph{body} length must be greater than the aver
   CSPMarubozu(YHOO, maxuppershadowCL=0)[,"WhiteMarubozu"]
 }
 }
-\keyword{}

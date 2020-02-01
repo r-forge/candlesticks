@@ -21,9 +21,6 @@ A xts object containing the columns:
   \item{Foramtion.Close}{Close price of the detected candlestick formation}
 }
 \author{Andreas Voellenklee}
-\references{
-}
-\note{}
 \seealso{
   \code{\link{CSPNBlended}}
 }
@@ -38,4 +35,3 @@ CSPEngulfing(YHOO)
 addPriceInfo(YHOO, CSPEngulfing(YHOO))
 }
 }
-\keyword{}

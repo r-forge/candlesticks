@@ -28,7 +28,6 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   \url{http://www.candlesticker.com/Bearish.asp}
 }
 \note{The function filters candles that look like dojis, without considering the current trend direction. If only doji patterns in a uptrend should be filtered, a external trend detection function must be used. See examples.}
-\seealso{}
 \examples{
 \dontrun{
   getSymbols('YHOO',adjust=TRUE)
@@ -43,4 +42,3 @@ The following site(s) were used to code/document this candlestick pattern:\cr
   CSPDoji(YHOO)[,"GravestoneDoji"] & TrendDetectionChannel(YHOO)[,"UpTrend"]
 }
 }
-\keyword{}

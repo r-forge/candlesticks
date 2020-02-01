@@ -31,11 +31,9 @@ Maintainer: Andreas Voellenklee <wotuzu17@gmail.com>
 }
 \keyword{ package }
 \note{
-All candlestick pattern detection functions \code{(CSP*)} preserve the xts time series' attributes and add one attribute \code{bars}, that represents the number of bars the formation consists of.
-}
-\seealso{
+All candlestick pattern detection functions \code{(CSP*)} preserve the xts time series' attributes and add one attribute \code{bars}, that represents the number of bars the formation consists of.\cr
 
-}
-\examples{
+The timezone of the R session should be set to UTC to prevent issues with internal lag functions.
 
+\code{Sys.setenv(TZ="UTC")}
 }

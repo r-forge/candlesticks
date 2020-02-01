@@ -3,3 +3,4 @@
 0.2-6 va 2018-09-01 lag -> stats::lag to prevent issues with dplyr
 0.2-7 va 2018-09-06 fixed CSPNLong(White|Black)Candles functions
 0.2-8 va 2019-02-22 fixed colnames in CSPLongCandle.R; thank you Sonam for reporting
+0.2-9 va 2020-02-01 added CSPThreeLineStrike

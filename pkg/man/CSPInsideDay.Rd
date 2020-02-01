@@ -28,8 +28,6 @@ The following site(s) were used to code/document this indicator:\cr
   \url{http://www.investopedia.com/terms/i/inside_day.asp#axzz1jWelu1cm}\cr
   \url{http://www.investopedia.com/terms/o/outside-days.asp#axzz1jWelu1cm}
 }
-\note{}
-\seealso{}
 \examples{
 \dontrun{
   getSymbols('YHOO',adjust=TRUE)
@@ -37,4 +35,3 @@ The following site(s) were used to code/document this indicator:\cr
   CSPOutsideDay(YHOO)
 }
 }
-\keyword{}

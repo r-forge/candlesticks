@@ -18,11 +18,8 @@ This function assumes that a price series is in uptrend (downtrend) when a perio
   \item{Trend}{+1 for uptrend, 0 for sideward trend, -1 for downtrend}
 }
 \author{Andreas Voellenklee}
-\references{
-}
-\note{}
 \seealso{
-\code{\link{TrendDetectionChannel}}
+  \code{\link{TrendDetectionChannel}}
 }
 \examples{
 \dontrun{
@@ -41,4 +38,3 @@ This function assumes that a price series is in uptrend (downtrend) when a perio
   colSums(Hammer, na.rm=TRUE)
 }
 }
-\keyword{}

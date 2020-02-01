@@ -6,7 +6,7 @@ CSPThreeMethods <- function (TS, n=20, threshold=1.5) {
   LAG3TS <- LagOC(TS, k=3)
   LAG1TS <- LagOC(TS, k=1)
   MAXOP <- stats::lag(runMax(Op(TS), n=3), k=1) # max open for middle 3 candles
-  MAXCL <- stats::ag(runMax(Cl(TS), n=3), k=1) # max close for middle 3 candles
+  MAXCL <- stats::lag(runMax(Cl(TS), n=3), k=1) # max close for middle 3 candles
   MINOP <- stats::lag(runMin(Op(TS), n=3), k=1) # min open for middle 3 candles
   MINCL <- stats::lag(runMin(Cl(TS), n=3), k=1) # min close for middle 3 candles
   LC4 <- CSPLongCandleBody(LAG4TS, n=n, threshold=threshold)

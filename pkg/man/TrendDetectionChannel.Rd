@@ -19,9 +19,6 @@ This function assumes that a price series is in uptrend when a period's price cl
   \item{Trend}{+1 for uptrend, 0 for sideward trend, -1 for downtrend}
 }
 \author{Andreas Voellenklee}
-\references{
-}
-\note{}
 \seealso{\code{\link{TrendDetectionSMA}}}
 \examples{
 \dontrun{
@@ -40,4 +37,3 @@ This function assumes that a price series is in uptrend when a period's price cl
   colSums(Hammer, na.rm=TRUE)
 }
 }
-\keyword{}

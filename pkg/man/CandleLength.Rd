@@ -19,8 +19,6 @@
   \item{absCandleLength}{candle length from low to high}
 }
 \author{Andreas Voellenklee}
-\references{}
-\note{}
 \seealso{\code{\link{CSPLongCandle}}}
 \examples{
 \dontrun{
@@ -29,4 +27,3 @@
   CandleBodyLength(YHOO)
 }
 }
-\keyword{}

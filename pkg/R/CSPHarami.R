@@ -1,6 +1,6 @@
 CSPHarami <- function(TS, n=20, minbodysizeMedian=1) {
   if (!is.OC(TS)) {
-    stop("Price series must contain Open, High, Low and Close.")
+    stop("Price series must contain Open and Close.")
   }
   LAGTS <- LagOC(TS, k=1)
   LongCandleBody <- CSPLongCandleBody(LAGTS, n=n, threshold=minbodysizeMedian)

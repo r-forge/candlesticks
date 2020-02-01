@@ -18,7 +18,6 @@ CSPNLongBlackCandleBodies(TS, N=2, n=20, threshold=1)
   \item{n}{number of preceding candles to calculate median candle length}
   \item{threshold}{minimum/maximum candle length in relation to the median candle length of \code{n} preceding candles}
 }
-\details{}
 \value{
   A xts object containing the columns:
   \item{<N>LongWhiteCandles}{TRUE if current candle is the \code{N}-th consecutive long white candle}
@@ -27,9 +26,6 @@ CSPNLongBlackCandleBodies(TS, N=2, n=20, threshold=1)
   \item{<N>LongBlackCandleBodies}{TRUE if current candle is the \code{N}-th consecutive long black candle body}
 }
 \author{Andreas Voellenklee}
-\references{
-}
-\note{}
 \seealso{
 \code{\link{CSPLongCandle}}
 \code{\link{CSPLongCandleBody}}
@@ -43,4 +39,3 @@ CSPNLongBlackCandleBodies(TS, N=2, n=20, threshold=1)
   CSPNLongBlackCandleBodies(YHOO, N=4, n=50, threshold=1.2)
 }
 }
-\keyword{}
